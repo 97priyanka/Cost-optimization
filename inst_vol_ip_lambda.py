@@ -53,6 +53,7 @@ def lambda_handler(event, context):
         volumes=ec2.describe_volumes()
         for vol in volumes['Volumes']:
             tags=ec2.describe_tags(Filters=[{'Name': 'resource-id','Values': [vol['VolumeId']]}])
+            name=""
             for tag in tags['Tags']:
                 if tag['Key']=='Name':
                     name=tag['Value']
