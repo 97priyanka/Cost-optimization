@@ -4,8 +4,11 @@ This python script gather the information from the AWS account and store the inf
 This excel file will take you know how you can minimize the cost of your AWS account.
 
 This is the code to be run in lambda function and generate excel file which contain:
+  
   tab 1: Information of stopped EC2 instance - This will make you know about all the instances that are stopped, if they are of no use you can terminate them to reduce cost.
+  
   tab 2: Information of available EBS volumes - It shows the available EBS volumes that are not attached to any instance, so if you don't need it. You can deregister it.
+  
   tab 3: Information of un-associated elastic ip's - As the elastic ip charge when it is not in use, so this excel will show the elastic ip's that are not in use so you can release addresses to reduce cost
 
 This python function can not run directly in lambda, as lambda do not support external dependencies like 'openpyxl'.
